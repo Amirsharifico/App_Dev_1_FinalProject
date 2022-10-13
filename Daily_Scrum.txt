@@ -1,0 +1,15 @@
+12-Oct-2022
+Creating new proposal with related DB and mokups 
+
+Discussion about user stories:
+- user can login
+- admin user can add new user to the system
+- user can add units(kg, Pallets, ...) 
+- user can add product destination info
+- user can add product info
+- user can add product quantity when a product comes in
+- user can remove product when it goes out from the warehouse
+- user can see the list of inventory
+- user can add/edit/delete a warehouse
+- user can add/edit/delete a client
+- user can manage the operation 
