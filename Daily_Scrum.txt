@@ -21,6 +21,7 @@ Amir ---------------------------------------------------------
 1. Done / not done since last scrum:
 
 2. To do until next Scrum:
+installing MSSQL 
 
 3. Need assistance / figure things out
 
@@ -28,12 +29,15 @@ Hossein ---------------------------------------------------------
 1. Done / not done since last scrum:
 
 2. To do until next Scrum:
-
+installing MSSQL 
 3. Need assistance / figure things out
 
 Ilnaz ---------------------------------------------------------
 1. Done / not done since last scrum:
 
 2. To do until next Scrum:
-
+installing MSSQL 
 3. Need assistance / figure things out
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+13-Oct-2022
+all of us still strugelling with database and main aspect of the project !!!
