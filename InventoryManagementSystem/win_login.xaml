@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InventoryManagementSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+         Title="win_login" Height="395" Width="580" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" >
     <Grid>
-        
+        <Rectangle HorizontalAlignment="Center" Height="370" Stroke="Black" VerticalAlignment="Center" Width="560" RadiusX="10" RadiusY="10"/>
+        <Rectangle HorizontalAlignment="Center" Height="86" Margin="0,13,0,0" Stroke="Black" VerticalAlignment="Top" Width="560" RadiusX="10" RadiusY="10"/>
+        <Label Content="Inventory Management System" HorizontalAlignment="Left" Margin="194,24,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="254,65,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="70" Margin="47,21,0,0" VerticalAlignment="Top" Width="76" Source="/img/Login-icon.png"/>
+        <Label Content="User Name" HorizontalAlignment="Left" Margin="42,161,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="42,195,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="TbxUserName" HorizontalAlignment="Left" Margin="150,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" BorderBrush="#FF151513" Height="20"/>
+        <PasswordBox Name="TbxPassword" HorizontalAlignment="Left" Margin="150,199,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FF151513" Height="22"/>
+        <Button Name="BtnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="102,295,0,0" VerticalAlignment="Top" Width="47" Cursor="Hand" Click="BtnLogIn_Click"/>
+        <Button Name="BtnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="194,295,0,0" VerticalAlignment="Top" Cursor="Hand" Click="BtnLogOut_Click"/>
+        <Calendar HorizontalAlignment="Left" Margin="338,142,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Name="Calender"/>
+
     </Grid>
 </Window>
