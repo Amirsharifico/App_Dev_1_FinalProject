@@ -1,0 +1,91 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IMSBeta.window"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="IMSBeta.window.win_main"
+        mc:Ignorable="d"
+        Title="win_main" Height="640" Width="1200" WindowStartupLocation="CenterScreen" Closing="Window_Closing" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+    <Grid>
+        <Custom:Ribbon Margin="10,0,10,119" >
+            <Custom:Ribbon.QuickAccessToolBar>
+                <Custom:RibbonQuickAccessToolBar>
+                    <Custom:RibbonSplitButton SmallImageSource="/img/advanced.tiff">
+                        <Custom:RibbonSplitMenuItem Header="About Us" ImageSource="/img/12.png"/>
+                        <Custom:RibbonSplitMenuItem Header="Contact Us" ImageSource="/img/send.png" Click="Btn_Con_Click"/>
+                        <Custom:RibbonSplitMenuItem Header="Exit" ImageSource="/img/exit.png"  Click="Btn_Exit_Click" />
+                    </Custom:RibbonSplitButton>
+                </Custom:RibbonQuickAccessToolBar>
+            </Custom:Ribbon.QuickAccessToolBar>
+
+            <Custom:Ribbon.ApplicationMenu>
+                <Custom:RibbonApplicationMenu>
+                    <Custom:RibbonApplicationMenuItem Header="Define User" ImageSource="/img/44.png" Click="Btn_ShowUser_Click"/>
+                    <Custom:RibbonApplicationMenuItem Header="Define User Access" ImageSource="/img/advanced.tiff"/>
+                    <Custom:RibbonApplicationMenuItem Header="Change Password" ImageSource="/img/2.png"/>
+                    <Custom:RibbonApplicationMenuItem Header="Define System **** " ImageSource="/img/ajza.png"/>
+                    <Custom:RibbonApplicationMenuItem Header="Define Customer" ImageSource="/img/customer.png" Click="Btn_ShowCustomer_Click"/>
+                    <Custom:RibbonApplicationMenuItem Header="Create BackUp" ImageSource="/img/server.png"/>
+                </Custom:RibbonApplicationMenu>
+            </Custom:Ribbon.ApplicationMenu>
+            <!---->
+            <Custom:RibbonTab Header="Products" Height="100">
+                <Custom:RibbonGroup>
+                    <Custom:RibbonButton Label="Show Products" LargeImageSource="/img/product2.gif" Click="Btn_ShowProduct_Click"/>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Header="Products Section" Height="80" Margin="0,0,0,10">
+                    <Custom:RibbonButton Label="Prices" SmallImageSource="/img/13.png" Margin="0,0,10,15"/>
+                    <Custom:RibbonButton Label="Products Inventory" SmallImageSource="/img/4.png"/>
+                    <Custom:RibbonButton Label="Sales Chart" SmallImageSource="/img/nemudar.png"/>
+                </Custom:RibbonGroup>
+            </Custom:RibbonTab>
+            <!---->
+            <Custom:RibbonTab Header="Sales" Height="100">
+                <Custom:RibbonGroup>
+                    <Custom:RibbonButton Label="Order Registration" LargeImageSource="/img/add-icon.png"/>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Header="Invoices" Height="80" Margin="0,0,0,10">
+                    <Custom:RibbonButton Label="View Invoice" SmallImageSource="/img/13.png" Margin="0,0,10,15"/>
+                    <Custom:RibbonButton Label="Sales Report" SmallImageSource="/img/4.png" />
+                    <Custom:RibbonButton Label="Customer Based Report" SmallImageSource="/img/send.png"/>
+                    <Custom:RibbonButton Label="Invoice Based Report" SmallImageSource="/img/21.png" />
+                    <Custom:RibbonButton Label="Product Based Report" SmallImageSource="/img/dastresi.png"/>
+                    <Custom:RibbonButton Label="User Based Report" SmallImageSource="/img/44.png" Margin="0,0,10,15"/>
+                    <Custom:RibbonButton Label="Cost-Benefit Based Report" SmallImageSource="/img/13.png" Margin="0,0,10,15"/>
+                    <Custom:RibbonButton Label="Sales Chart" SmallImageSource="/img/nemudar.png"/>
+
+                </Custom:RibbonGroup>
+
+            </Custom:RibbonTab>
+            <!---->
+            <Custom:RibbonTab Header="WareHouse Management" Height="100">
+
+            </Custom:RibbonTab>
+            <!---->
+            <Custom:RibbonTab Header="Reports" Height="100">
+
+            </Custom:RibbonTab>
+
+        </Custom:Ribbon>
+
+        <DockPanel LastChildFill="False" Margin="10,567,10,10">
+            <Label Name="LblName" Content="Name" Width="86" Height="29"/>
+            <Label Content="Label2" Width="86" Height="29"/>
+            <Label Content="Label3" Width="86" Height="29"/>
+            <Label Content="Label4" Width="86" Height="29"/>
+            <Label Content="Label5" Width="86" Height="29"/>
+            <Label Content="Label6" Width="86" Height="29"/>
+            <Label Content="Label7" Width="86" Height="29"/>
+
+        </DockPanel>
+       
+
+
+
+
+
+
+
+    </Grid>
+</Window>
