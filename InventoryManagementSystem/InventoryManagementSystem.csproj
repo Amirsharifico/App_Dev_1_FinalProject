@@ -55,18 +55,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="win_login.xaml.cs">
+      <DependentUpon>win_login.xaml</DependentUpon>
     </Compile>
+    <Page Include="theme\ShinyDarkPurple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="window\win_product.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="win_login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,6 +93,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages\EntityFramework.6.2.0\Content\net40\App.config.transform" />
+    <None Include="packages\EntityFramework.6.2.0\Content\net40\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.2.0\EntityFramework.6.2.0.nupkg" />
+    <None Include="packages\EntityFramework.6.2.0\tools\EntityFramework.psd1" />
+    <None Include="packages\EntityFramework.6.2.0\tools\EntityFramework.psm1" />
+    <None Include="packages\EntityFramework.6.2.0\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.2.0\tools\install.ps1" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +107,97 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\12.png" />
+    <Resource Include="img\13.png" />
+    <Resource Include="img\1cover.jpg" />
+    <Resource Include="img\2.png" />
+    <Resource Include="img\21.png" />
+    <Resource Include="img\2cover.jpg" />
+    <Resource Include="img\3cover.jpg" />
+    <Resource Include="img\4.png" />
+    <Resource Include="img\44.png" />
+    <Resource Include="img\57.jpg" />
+    <Resource Include="img\9.png" />
+    <Resource Include="img\add-icon.png" />
+    <Resource Include="img\add.png" />
+    <Resource Include="img\advanced.tiff" />
+    <Resource Include="img\ajza.png" />
+    <Resource Include="img\b3.png" />
+    <Resource Include="img\b4.png" />
+    <Resource Include="img\back22.jpg" />
+    <Resource Include="img\back23.jpg" />
+    <Resource Include="img\backcust.jpg" />
+    <Resource Include="img\background.jpg" />
+    <Resource Include="img\backGround.png" />
+    <Resource Include="img\background1.jpg" />
+    <Resource Include="img\background_main.png" />
+    <Resource Include="img\Box.png" />
+    <Resource Include="img\box_icon.png" />
+    <Resource Include="img\button_1.png" />
+    <Resource Include="img\clock.ico" />
+    <Resource Include="img\colorline.jpg" />
+    <Resource Include="img\customer.png" />
+    <Resource Include="img\dastresi.png" />
+    <Resource Include="img\del.png" />
+    <Resource Include="img\edit.png" />
+    <Resource Include="img\exit.png" />
+    <Resource Include="img\gol.jpg" />
+    <Resource Include="img\gol1.jpg" />
+    <Resource Include="img\gol2.png" />
+    <Resource Include="img\img1.jpg" />
+    <Resource Include="img\img2.jpg" />
+    <Resource Include="img\img3.jpg" />
+    <Resource Include="img\img4.jpg" />
+    <Resource Include="img\img5.jpg" />
+    <Resource Include="img\img6.jpg" />
+    <Resource Include="img\img7.jpg" />
+    <Resource Include="img\info.png" />
+    <Resource Include="img\inventory.png" />
+    <Resource Include="img\invoice.ico" />
+    <Resource Include="img\Login-icon.png" />
+    <Resource Include="img\Login.jpg" />
+    <Resource Include="img\manygol.jpg" />
+    <Resource Include="img\money.png" />
+    <Resource Include="img\mottakere.png" />
+    <Resource Include="img\nemudar.jpg" />
+    <Resource Include="img\nemudar.png" />
+    <Resource Include="img\no.png" />
+    <Resource Include="img\paein.png" />
+    <Resource Include="img\price.png" />
+    <Resource Include="img\price1.png" />
+    <Resource Include="img\product.png" />
+    <Resource Include="img\product1.jpg" />
+    <Resource Include="img\product2.gif" />
+    <Resource Include="img\productdefault.png" />
+    <Resource Include="img\report.png" />
+    <Resource Include="img\report_rpt.png" />
+    <Resource Include="img\search.ico" />
+    <Resource Include="img\send.png" />
+    <Resource Include="img\server.png" />
+    <Resource Include="img\Star.png" />
+    <Resource Include="img\stock-market.png" />
+    <Resource Include="img\stock.png" />
+    <Resource Include="img\title1.jpg" />
+    <Resource Include="img\title2.jpg" />
+    <Resource Include="img\users.jpg" />
+    <Resource Include="img\user_group.png" />
+    <Resource Include="img\win_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll" />
+    <Resource Include="packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.xml" />
+    <Resource Include="packages\EntityFramework.6.2.0\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll" />
+    <Resource Include="packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.xml" />
+    <Resource Include="packages\EntityFramework.6.2.0\lib\net45\EntityFramework.xml" />
+    <Resource Include="packages\EntityFramework.6.2.0\tools\about_EntityFramework.help.txt" />
+    <Content Include="packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.Utility.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\tools\migrate.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
