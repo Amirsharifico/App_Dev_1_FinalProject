@@ -82,7 +82,7 @@ Create User Table
 3. Need assistance / figure things out
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-15-Oct-2022
+16-Oct-2022
 Amir ---------------------------------------------------------
 1. Done / not done since last scrum:
 Registery Editir  To have logged in user
