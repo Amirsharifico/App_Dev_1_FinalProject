@@ -51,7 +51,7 @@ Project Initialize Done
 Database Instalation (MSSQL) and connecting to app is done  
 
 2. To do until next Scrum:
-Registery Editir  To have logged in user
+Registery Editor  To have logged in user
 Create Ribbon Menue 
 Create DataModelLayer Project
  
