@@ -95,6 +95,7 @@ Price product page and table
 
 3. Need assistance / figure things out
 
+
 Hossein ---------------------------------------------------------
 1. Done / not done since last scrum:
 Create Main window
@@ -114,10 +115,42 @@ Create User Table
  inventory table
 Update product
 
-
 3. Need assistance / figure things out
 
 
+17-Oct-2022
+Amir ---------------------------------------------------------
+1. Done / not done since last scrum:
+Price product page and table
+
+2. To do until next Scrum:
+Insert button for Delete/Update
+ Work on Delete/ Update button
+ Craete User Form and Register Date
+ 
+3. Need assistance / figure things out
+
+Hossein ---------------------------------------------------------
+1. Done / not done since last scrum:
+ Customer table and page
+
+2. To do until next Scrum:
+Create Customer Form
+Add Customer Information
+Create Regex for User
+3. Need assistance / figure things out
+
+Ilnaz ---------------------------------------------------------
+1. Done / not done since last scrum:
+ inventory table
+ Update product
+
+2. To do until next Scrum:
+ Work on Inventory Page
+Insert button for Add price
+ Create Regex for Customer
+ 
+3. Need assistance / figure things out
 
 
 
