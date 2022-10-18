@@ -23,5 +23,20 @@ namespace IMSBeta.window
         {
             InitializeComponent();
         }
+
+        private void image_close_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btn_Ok_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
