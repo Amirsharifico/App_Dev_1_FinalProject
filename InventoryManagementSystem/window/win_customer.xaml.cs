@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace IMSBeta.window
 {
     /// <summary>
@@ -25,7 +26,7 @@ namespace IMSBeta.window
             InitializeComponent();
         }
         //-- Db instantiation
-        inventorydbEntities database = new inventorydbEntities();
+        inventorydbEntities1 database = new inventorydbEntities1();
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -37,12 +38,12 @@ namespace IMSBeta.window
             //var query = from u in database.Vw_Users select u;
             //var user =query.ToList();
             //DataGridUser.ItemsSource = user;
-            ShowUserInfo();
+            ShowCustomerInfo();
 
 
         }
         // Connect to Db and Show in datagrid 
-        private void ShowUserInfo()
+        private void ShowCustomerInfo()
         {
             var query = database.Database.SqlQuery<Vw_Customer>("Select * From Vw_Customer");
             var u = query.ToList();
@@ -52,6 +53,50 @@ namespace IMSBeta.window
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+        }
+
+        private void Btn_AddCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            win_add_edit_customer w_ae = new win_add_edit_customer();
+            w_ae.win_Type = 1; // adding customer
+            w_ae.ShowDialog();
+            ShowCustomerInfo();
+        }
+
+        private void Btn_EditCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            object item = DataGridCustomer.SelectedItem;
+            win_add_edit_customer w_ae = new win_add_edit_customer();
+            w_ae.win_Type = 2; // Update Customer
+
+
+            if (item == null)
+            {
+
+                MessageBox.Show("please select a customer first");
+                return;
+            }
+             w_ae.CID = Convert.ToInt32((DataGridCustomer.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+            w_ae.CName = (DataGridCustomer.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
+            w_ae.CTel = (DataGridCustomer.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            w_ae.CAddress = (DataGridCustomer.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
+
+
+
+            w_ae.ShowDialog();
+            ShowCustomerInfo();
+            
+           
+        }
+
+        private void Btn_DeleteCustomer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGridCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
