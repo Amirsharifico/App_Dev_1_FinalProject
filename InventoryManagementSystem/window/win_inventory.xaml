@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IMSBeta.window"
         mc:Ignorable="d"
-           Title="win_product" Height="700" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" Loaded="Window_Loaded">
+                  Title="win_inventory" Height="700" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" Loaded="Window_Loaded">
     <Window.Triggers>
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard>
@@ -19,7 +19,7 @@
 
         <Rectangle HorizontalAlignment="Center" Height="680" Stroke="Black" Fill="White" VerticalAlignment="Center" Width="580"/>
         <Rectangle HorizontalAlignment="Center" Height="84" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="580" MouseDown="Rectangle_MouseDown"/>
-        <Label Content="Import/Export Inventory History" HorizontalAlignment="Left" Margin="160,44,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Product In/Out  History" HorizontalAlignment="Left" Margin="160,44,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Image HorizontalAlignment="Left" Height="58" Margin="31,21,0,0" VerticalAlignment="Top" Width="70" Source="/img/stock-market.png"/>
         <Image HorizontalAlignment="Left" Height="16" Margin="550,44,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.7,-0.062"
                Source="/img/exit.png" Cursor="Hand" MouseDown="Image_MouseDown" />
@@ -31,23 +31,16 @@
 
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Product ID" Width="100" Binding="{Binding ProductID}"/>
+                <DataGridTextColumn Header="Type" Width="100" Binding="{Binding status}"/>
+
+                <DataGridTextColumn Header="Count" Width="100" Binding="{Binding InventoryCount}"/>
+
+                <DataGridTextColumn Header="Description" Width="100" Binding="{Binding InventoryDesc}"/>
+
+                <DataGridTextColumn Header="Operated By" Width="100" Binding="{Binding FullName}"/>
 
 
-                <DataGridTextColumn Header="Name" Width="100" Binding="{Binding ProductName}"/>
-
-
-                <DataGridTextColumn Header="Description" Width="100" Binding="{Binding ProductDescription}"/>
-
-
-                <DataGridTextColumn Header="Price" Width="100" Binding="{Binding ProductLastFee}"/>
-
-                <DataGridTextColumn Header="Quantity" Width="100" Binding="{Binding ProductLastSupply}"/>
-
-
-                <DataGridTextColumn Header="Price" Width="100" Binding="{Binding ProductLastFee}"/>
-
-                <DataGridTextColumn Header="Registered By " Width="100" Binding="{Binding FullName}"/>
+                <!---->
                 <DataGridTemplateColumn Header="Image">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -55,8 +48,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
-
+                <!---->
 
             </DataGrid.Columns>
 
@@ -64,14 +56,11 @@
 
 
 
-
-
         <!--Buttons-->
-        <Button Name="Btn_AddNewPrice" Content="Add New Price" HorizontalAlignment="Left" Margin="403,608,0,0" VerticalAlignment="Top"/>
+        <Button Name="Btn_AddNewOperation" Content="Add New Operation" HorizontalAlignment="Left" Margin="354,608,0,0" VerticalAlignment="Top"/>
 
-        <Button Name="Btn_Exit" Content="Exit" HorizontalAlignment="Left" Margin="105,608,0,0" VerticalAlignment="Top"/>
+        <Button Name="Btn_Exit" Content="Exit" HorizontalAlignment="Left" Margin="105,608,0,0" VerticalAlignment="Top" Width="127"/>
         <Label  Name="Lbl_Product" Content="........" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" Width="136" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>
-
