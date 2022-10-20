@@ -16,11 +16,11 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="66" Margin="10,10,0,0" RadiusY="10" RadiusX="10" Stroke="#FF0826E2" VerticalAlignment="Top" Width="380">
+        <Rectangle HorizontalAlignment="Left" Height="66" Margin="10,10,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="380">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFE6E6E6" Offset="0"/>
-                    <GradientStop Color="#FFCAFBFF" Offset="1"/>
+                    <GradientStop Color="#FFE8E8E8" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
             <Rectangle.Effect>
@@ -37,35 +37,29 @@
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
-        <Label x:Name="label" Content="Add and Edit Product"  Margin="80,29,106,0" VerticalAlignment="Top" Foreground="#FF04530B" FontFamily="B Yekan" FontSize="18" FontWeight="Bold">
-
-        </Label>
+        <Label x:Name="label" Content="Add and Edit Product"  Margin="80,29,106,0" VerticalAlignment="Top" Foreground="Black" FontFamily="B Yekan" FontSize="18" FontWeight="Bold" Background="{x:Null}"/>
         <Label x:Name="label1" Content="Created By :"  Margin="33,102,233,0" VerticalAlignment="Top"  Foreground="#FF031153"  FontSize="14.667"/>
         <Label x:Name="lbl_username" Content="..."  Margin="140,105,140,0" VerticalAlignment="Top"  Width="121" Foreground="#FFF12A0B" FontSize="14.667"/>
         <Label x:Name="label1_Copy1" Content="Product Name :" Margin="33,159,233,0" VerticalAlignment="Top"  Foreground="#FF031153"  FontSize="14.667"/>
         <Label x:Name="label1_Copy2" Content="Image :"  Margin="33,291,233,0" VerticalAlignment="Top"  Foreground="#FF031153"  FontSize="14.667"/>
         <Label x:Name="label1_Copy3" Content="Description :"  Margin="33,210,233,0" VerticalAlignment="Top"  Foreground="#FF031153"  FontSize="14.667" RenderTransformOrigin="0.866,0.188"/>
-        <Button x:Name="btn_ok" Content="Add" Margin="62,415,233,0" VerticalAlignment="Top" Width="105" Height="33" Foreground="#FF081670" FontSize="14.667" Cursor="Hand" Click="btn_ok_Click">
+        <Button x:Name="btn_ok" Content="Submit" Margin="62,415,233,0" VerticalAlignment="Top" Width="105" Height="33" Foreground="#FF081670" FontSize="14.667" Cursor="Hand" Click="btn_ok_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFD7E8D7" Offset="1"/>
-                    <GradientStop Color="#FF3E533E"/>
+                    <GradientStop Color="#FF6C8EC9"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.8"/>
                 </LinearGradientBrush>
             </Button.Background>
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
         </Button>
         <Button x:Name="btn_exit" Content="Exit"  Margin="232,415,63,0" VerticalAlignment="Top" Width="105" Height="33" Foreground="#FF081670"  FontSize="14.667" Cursor="Hand" Click="btn_exit_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFD7E8D7" Offset="1"/>
-                    <GradientStop Color="#FF3E533E"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.8"/>
                 </LinearGradientBrush>
             </Button.Background>
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
         </Button>
         <TextBox x:Name="txt_productname"  Height="23" Margin="153,166,63,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" >
             <TextBox.Background>
@@ -104,19 +98,6 @@
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </Grid>
 </Window>

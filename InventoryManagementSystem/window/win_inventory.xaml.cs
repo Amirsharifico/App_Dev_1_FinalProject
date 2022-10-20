@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using IMSBeta.Module;
 
 namespace IMSBeta.window
 {
@@ -26,7 +27,7 @@ namespace IMSBeta.window
         }
 
         //-- Db instantiation
-        inventorydbEntities database = new inventorydbEntities();
+        inventorydbEntities1 database = new inventorydbEntities1();
 
         public string ProductName;
         public int ProductID;
@@ -55,22 +56,6 @@ namespace IMSBeta.window
             DataGridInventory.ItemsSource = u;
         }
 
-   
-
-
-
-        //----------
-        // Connect to Db and Show in datagrid
-        //private void ShowPriceInfo()
-        //{
-        //     //var query = database.Database.SqlQuery<Vw_ProductPrice>("select * From Vw_ProductPrice where 1=1 and productId= " + ProductID + "" + SearchStringForPrice());
-
-
-        //    var query = database.Database.SqlQuery<Vw_Inventory>("Select * From Vw_Inventory");
-        //    var u = query.ToList();
-        //    DataGridInventory.ItemsSource = u;
-        //}
-
 
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -78,12 +63,18 @@ namespace IMSBeta.window
             this.Close();
         }
 
+        private void Btn_AddNewOperation_Click(object sender, RoutedEventArgs e)
+        {
+            win_AddnewTransaction w_addtrans = new win_AddnewTransaction();
+            w_addtrans.productid = this.ProductID;
+            w_addtrans.productName = this.ProductName;
+            w_addtrans.ShowDialog();
+            ShowUserInfo();
+        }
 
-
-
-
-
-
-
+        private void Btn_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
