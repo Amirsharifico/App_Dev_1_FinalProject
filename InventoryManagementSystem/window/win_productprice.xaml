@@ -18,20 +18,28 @@
     <Grid>
 
         <Rectangle HorizontalAlignment="Center" Height="680" Stroke="Black" Fill="White" VerticalAlignment="Center" Width="580"/>
-        <Rectangle HorizontalAlignment="Center" Height="84" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="580" MouseDown="Rectangle_MouseDown"/>
-        <Label Content="Products Prices Control" HorizontalAlignment="Left" Margin="135,39,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Rectangle Height="88" Margin="10,10,6,0" RadiusY="10" RadiusX="10" Stroke="Black" VerticalAlignment="Top" MouseDown="Rectangle_MouseDown">
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6A7DD1" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Products Prices Control" HorizontalAlignment="Left" Margin="118,37,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <Image HorizontalAlignment="Left" Height="58" Margin="31,21,0,0" VerticalAlignment="Top" Width="70" Source="/img/money.png"/>
         <Image HorizontalAlignment="Left" Height="16" Margin="550,44,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.7,-0.062"
                Source="/img/exit.png" Cursor="Hand" MouseDown="Image_MouseDown" />
-        <Rectangle HorizontalAlignment="Center" Height="100" Margin="0,474,0,0" Stroke="Black" VerticalAlignment="Top" Width="568"/>
         <!--v11/m40-->
-        <Label Content="Search" HorizontalAlignment="Left" Margin="31,511,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.448,-1.387" FontWeight="Bold"/>
         <!--DatGrid-->
         <DataGrid Name="DataGridProductPrice" AutoGenerateColumns="False" Margin="98,137,98,258" BorderThickness="1" VerticalGridLinesBrush="White">
 
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Purchase Price" Width="100" Binding="{Binding ProductPricePurch }"/>
+               <DataGridTextColumn Header="Purchase Price" Width="100" Binding="{Binding ProductPricePurch }"/>
 
 
                 <DataGridTextColumn Header="Sales Price " Width="100" Binding="{Binding ProductPriceSell}"/>
@@ -39,10 +47,10 @@
 
                 <DataGridTextColumn Header="Description" Width="100" Binding="{Binding ProductPriceDesc}"/>
 
-               
+
 
                 <DataGridTextColumn Header="Registered By " Width="100" Binding="{Binding FullName}"/>
-               
+
 
 
             </DataGrid.Columns>
@@ -50,16 +58,34 @@
         </DataGrid>
 
 
-
-
-
         <!--Buttons-->
-        <Button Name="Btn_AddNewPrice" Content="Add New Price" HorizontalAlignment="Left" Margin="400,613,0,0" VerticalAlignment="Top"/>
-
-        <Button Name="Btn_Exit" Content="Exit" HorizontalAlignment="Left" Margin="105,608,0,0" VerticalAlignment="Top"/>
 
         <Label Content="Price History Of" HorizontalAlignment="Left" Margin="189,101,0,0" VerticalAlignment="Top" Width="98"/>
         <Label  Name="Lbl_Product" Content="..." HorizontalAlignment="Left" Margin="292,101,0,0" VerticalAlignment="Top" Width="137"/>
+        <Button x:Name="Btn_AddNewPrice" Content="Add New Price" HorizontalAlignment="Left" Margin="118,583,0,0" Width="120" Height="40" VerticalAlignment="Top" Click="Btn_AddNewPrice_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Btn_Exit" Content="Exit" Width="120" Height="40" HorizontalAlignment="Left" Margin="360,583,0,0" VerticalAlignment="Top" Click="Btn_Exit_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

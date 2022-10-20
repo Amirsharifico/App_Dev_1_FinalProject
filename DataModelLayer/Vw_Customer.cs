@@ -14,12 +14,14 @@ namespace DataModelLayer
     
     public partial class Vw_Customer
     {
+        public string UserName { get; set; }
+        public string UserFamily { get; set; }
         public int CustomerID { get; set; }
         public string CustomerName { get; set; }
         public string CustomerTel { get; set; }
         public string CustomerAddress { get; set; }
-        public string UserName { get; set; }
-        public string UserFamily { get; set; }
+        public int UserID { get; set; }
         public string FullName { get; set; }
+        public Nullable<byte> CustomerActive { get; set; }
     }
 }

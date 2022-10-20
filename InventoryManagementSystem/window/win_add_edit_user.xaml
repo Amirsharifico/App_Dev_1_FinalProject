@@ -28,9 +28,7 @@
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
-        <Label x:Name="label" Content="User Add and Edit form" Margin="85,32,180,0" VerticalAlignment="Top" Foreground="#FFA00707" FontSize="18" FontWeight="Bold">
-
-        </Label>
+        <Label x:Name="label" Content="User Add and Edit form" Margin="85,32,180,0" VerticalAlignment="Top" Foreground="Black" FontSize="18" FontWeight="Bold"/>
         <Image x:Name="image1"  Height="64" Margin="21,20,420,0" VerticalAlignment="Top" Width="59" Source="/img/user_group.png" Stretch="Fill">
             <Image.Effect>
                 <DropShadowEffect/>
@@ -72,29 +70,27 @@
                 <DropShadowEffect/>
             </PasswordBox.Effect>
         </PasswordBox>
-        <Button x:Name="btn_ok" Content="Add"  Margin="294,462,88,51" Width="118" Height="37"  FontSize="14.667" Foreground="#FF0A1FA8" Cursor="Hand" TabIndex="6" Click="btn_ok_Click">
+        <Button x:Name="btn_ok" Content="Submit"  Margin="105,455,277,58" Width="118" Height="37"  FontSize="14.667" Foreground="#FF0A1FA8" Cursor="Hand" TabIndex="6" Click="btn_ok_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFC1CF68"/>
-                    <GradientStop Color="#FFE4ECB5" Offset="0.836"/>
-                    <GradientStop Color="#FFE1E2DA" Offset="0.617"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btn_exit" Content="Exit"  Margin="92,462,290,0" VerticalAlignment="Top" Width="118" Height="37"  FontSize="14.667" Foreground="#FF0A1FA8" Cursor="Hand" Click="btn_exit_Click" TabIndex="7">
+        <Button x:Name="btn_exit" Content="Exit"  Margin="294,456,88,0" VerticalAlignment="Top" Width="118" Height="36"  FontSize="14.667" Foreground="#FF0A1FA8" Cursor="Hand" Click="btn_exit_Click" TabIndex="7">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFC1CF68"/>
-                    <GradientStop Color="#FFE4ECB5" Offset="0.836"/>
-                    <GradientStop Color="#FFE3E9BC" Offset="0.617"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>

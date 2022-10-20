@@ -30,23 +30,69 @@ namespace IMSBeta.window
         string strName, imageName;
         inventorydbEntities1 database = new inventorydbEntities1();
 
+        public byte win_Type { get; set; }
+
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public string ProductDesc { get; set; }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             lbl_username.Content = PublicVariable.gUserName + " " + PublicVariable.gUserFamily;
+            switch (win_Type)
+            {
+                case 1:
+                    {
+                        break;
+                    }
+                case 2:
+                    {
+                        txt_productname.Text = ProductName;
+                        txt_desc.Text = ProductDesc;
+                        /////////////////////////
+                       ShowImage();
+                        /////////////////////////
+                        break;
+                    }
+            }
 
+        }
+        private void ShowImage()
+        {
+            /////Create Image in DB
+            var query = from P in database.Products where P.ProductId == ProductId select P;
+            var result = query.ToList();
+
+            if (result[0].ProductImage != null)
+            {
+                byte[] ImageArray = (byte[])result[0].ProductImage;
+                MemoryStream stream = new MemoryStream();
+                stream.Write(ImageArray, 0, ImageArray.Length);
+
+                System.Drawing.Image img = System.Drawing.Image.FromStream(stream);
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                ms.Seek(0, SeekOrigin.Begin);
+                bi.StreamSource = ms;
+                bi.EndInit();
+                image_product.Source = bi;
+            }
         }
 
         private bool CheckNullable()
         {
             if (txt_productname.Text == "")
             {
-                MessageBox.Show("Enter the product name");
+                MessageBox.Show("Enter the product name", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_productname.Focus();
                 return false;
             }
             if (txt_desc.Text == "")
             {
-                MessageBox.Show("Enter the product description");
+                MessageBox.Show("Enter the product description", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_desc.Focus();
                 return false;
             }
@@ -61,30 +107,63 @@ namespace IMSBeta.window
             {
                 return;
             }
+
+
             try
             {
-                if (imageName != null)
+
+                switch (win_Type)
                 {
-                    //// change type of image to String
-                    FileStream fs = new FileStream(imageName, FileMode.Open, FileAccess.Read);
-                    byte[] imgByteArr = new byte[fs.Length];
-                    fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
-                    fs.Close();
+                    case 1:
+                        {
+                            if (imageName != null)
+                            {
+                                //// change type of image to String
+                                FileStream fs = new FileStream(imageName, FileMode.Open, FileAccess.Read);
+                                byte[] imgByteArr = new byte[fs.Length];
+                                fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
+                                fs.Close();
 
 
-                    /////////////Save in DB
-                    database.Sp_ins_product(txt_productname.Text.Trim(), txt_desc.Text.Trim(), imgByteArr, PublicVariable.gUserId);
-                    database.SaveChanges();
+                                /////////////Save in DB
+                                database.Sp_ins_product(txt_productname.Text.Trim(), txt_desc.Text.Trim(), imgByteArr, PublicVariable.gUserId);
+                                database.SaveChanges();
+                                MessageBox.Show("Information saved successfully", "Save error", MessageBoxButton.OK, MessageBoxImage.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please select an image for the new item", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                return;
+                            }
+                            break;
+                        }
+                    case 2:
+                        {
+                            if (imageName != null)
+                            {
+                                //Image type to String
+                                FileStream fs = new FileStream(imageName, FileMode.Open, FileAccess.Read);
+                                byte[] imgByteArr = new byte[fs.Length];
+                                fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
+                                fs.Close();
 
-                    MessageBox.Show("Information saved successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Please select an image for the new item");
-                    return;
+
+                                database.Sp_Update_Product(ProductId, txt_productname.Text.Trim(), txt_desc.Text.Trim(), imgByteArr);
+                                database.SaveChanges();
+                                MessageBox.Show("Information edited successfully", "Save error", MessageBoxButton.OK, MessageBoxImage.Information);
+                            }
+                           
+
+
+
+
+                            break;
+                        }
+
                 }
             }
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -92,12 +171,9 @@ namespace IMSBeta.window
             {
                 this.Close();
             }
-
-
-
-
-
         }
+
+
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
@@ -130,7 +206,7 @@ namespace IMSBeta.window
             }
             catch
             {
-                MessageBox.Show("An error has occurred, please check");
+                MessageBox.Show("An error has occurred, please check", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }

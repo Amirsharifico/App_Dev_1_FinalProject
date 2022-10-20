@@ -14,15 +14,15 @@ namespace DataModelLayer
     
     public partial class Vw_Users
     {
-        public Nullable<byte> UserActive { get; set; }
-        public Nullable<byte> UserGender { get; set; }
+        public int UserID { get; set; }
+        public string UserName { get; set; }
+        public string UserFamily { get; set; }
+        public string UserTel { get; set; }
+        public string UserUserName { get; set; }
         public Nullable<byte> UserAge { get; set; }
         public string UserPassword { get; set; }
-        public string UserUserName { get; set; }
-        public string UserTel { get; set; }
-        public string UserFamily { get; set; }
-        public string UserName { get; set; }
-        public int UserID { get; set; }
+        public Nullable<byte> UserGender { get; set; }
+        public Nullable<byte> UserActive { get; set; }
         public string UserGenderShow { get; set; }
         public string UserActiveShow { get; set; }
     }

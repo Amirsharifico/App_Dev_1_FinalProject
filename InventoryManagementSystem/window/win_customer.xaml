@@ -27,17 +27,18 @@
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF7CB2F1" Offset="0"/>
-                    <GradientStop Color="#FFAFF1BB" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        
         <Label Content="Customers"  Margin="110,37,352,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <Image HorizontalAlignment="Left" Height="58" Margin="31,21,0,0" VerticalAlignment="Top" Width="70" Source="/img/customer.png"/>
         <Image HorizontalAlignment="Left" Height="16" Margin="550,44,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.7,-0.062"
                Source="/img/exit.png" Cursor="Hand" MouseDown="Image_MouseDown" />
         <!--v11/m40-->
         <!--DatGrid-->
-        <DataGrid Name="DataGridCustomer" AutoGenerateColumns="False" Margin="50,111,44,219" BorderThickness="1" VerticalGridLinesBrush="White" SelectionChanged="DataGridCustomer_SelectionChanged">
+        <DataGrid Name="DataGridCustomer" AutoGenerateColumns="False" Margin="32,121,34,122" BorderThickness="1" VerticalGridLinesBrush="White" SelectionChanged="DataGridCustomer_SelectionChanged">
 
             <DataGrid.Columns>
 
@@ -50,25 +51,28 @@
                 <DataGridTextColumn Header="Tel" Width="100" Binding="{Binding CustomerTel}"/>
 
 
-                <DataGridTextColumn Header="Address" Width="100" Binding="{Binding CustomerAddress}"/>
+                <DataGridTextColumn Header="Address" Width="130" Binding="{Binding CustomerAddress}"/>
+                <DataGridTextColumn Header="CustomerActive" Width="100" Binding="{Binding CustomerActive}"/>
 
 
-
-
+                
 
             </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Active Customer" Click="btn_ActiveCustomer_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/img/price.png" Width="12" Height="12"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                </ContextMenu>
+
+
+            </DataGrid.ContextMenu>
 
         </DataGrid>
 
-
-        <Rectangle HorizontalAlignment="Left" Height="72" Margin="32,590,0,0" RadiusY="10" RadiusX="10" Stroke="#FFBFB4B4" VerticalAlignment="Top" Width="542">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFDDC9EC" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
 
 
         <!--Buttons-->
@@ -78,34 +82,37 @@
             </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7E86CF" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
 
 
 
-        <Button x:Name="Btn_AddCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="81,609,0,0" VerticalAlignment="Top" Width="109" Height="37" FontFamily="B Yekan" FontSize="14.667" Foreground="#FF3E3709" Cursor="Hand" Click="Btn_EditCustomer_Click">
+        <Button x:Name="Btn_AddCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="81,609,0,0" VerticalAlignment="Top" Width="109" Height="37" FontSize="14.667" Foreground="#FF3E3709" Cursor="Hand" Click="Btn_AddCustomer_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7E86CF" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
 
-        <Button x:Name="Btn_DeleteCustomer" Content="Delete Customer"  Margin="418,610,74,0" VerticalAlignment="Top" Width="108" Height="37"  FontSize="14.667" Foreground="#FF3E3709" Cursor="Hand" Click="Btn_EditCustomer_Click">
+        <Button x:Name="Btn_DeleteCustomer" Content="Delete Customer"  Margin="418,610,74,0" VerticalAlignment="Top" Width="108" Height="37"  FontSize="14.667" Foreground="#FF3E3709" Cursor="Hand" Click="Btn_DeleteCustomer_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7E86CF" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>

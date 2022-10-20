@@ -30,10 +30,12 @@ namespace IMSBeta.window
 
 
         //-- Db instantiation
-        inventorydbEntities database = new inventorydbEntities();
+
+
+        inventorydbEntities1 database = new inventorydbEntities1();
 
         public string ProductName;
-        public int ProductID;
+        public int ProductId;
         
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -46,14 +48,14 @@ namespace IMSBeta.window
             //var user =query.ToList();
             //DataGridUser.ItemsSource = user;
             Lbl_Product.Content = ProductName;
-            ShowUserInfo();
+            ShowPriceInfo();
 
         }
         //------------
 
-        private void ShowUserInfo()
+        private void ShowPriceInfo()
         {
-            var query = database.Database.SqlQuery<Vw_ProductPrice>("Select * From Vw_ProductPrice Where 1=1 and productId = " + ProductID);
+            var query = database.Database.SqlQuery<Vw_ProductPrice>("Select * From Vw_ProductPrice Where 1=1 and productId = " + ProductId);
 
             var u = query.ToList();
             DataGridProductPrice.ItemsSource = u;
@@ -65,48 +67,24 @@ namespace IMSBeta.window
         {
             this.Close();
         }
+
+        private void Btn_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_AddNewPrice_Click(object sender, RoutedEventArgs e)
+        {
+            win_AddNewPrice w_a = new win_AddNewPrice();
+            w_a.productName = this.ProductName;
+            w_a.productid = this.ProductId;
+            w_a.ShowDialog();
+
+            ShowPriceInfo();
+        }
     }
 }
 
 
 
 
-///////////////////
-//    public partial class win_productprice : Window
-//    {
-//        public win_productprice()
-//        {
-//            InitializeComponent();
-//        }
-
-//        //-- Db instantiation
-//        inventorydbEntities database = new inventorydbEntities();
-
-//        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
-//        {
-//            this.DragMove();
-//        }
-
-//        private void Window_Loaded(object sender, RoutedEventArgs e)
-//        {// LINQ syntax: 
-//         //var query = from u in database.Vw_Users select u;
-//         //var user =query.ToList();
-//         //DataGridUser.ItemsSource = user;
-//            ShowPriceInfo();
-
-
-//        }
-//        // Connect to Db and Show in datagrid 
-//        private void ShowPriceInfo()
-//        {
-//            var query = database.Database.SqlQuery<Vw_ProductPrice>("Select * From Vw_ProductPrice");
-//            var u = query.ToList();
-//            DataGridProduct.ItemsSource = u;
-//        }
-
-//        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
-//        {
-//            this.Close();
-//        }
-//    }
-//}

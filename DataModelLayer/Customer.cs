@@ -19,11 +19,8 @@ namespace DataModelLayer
         public string CustomerTel { get; set; }
         public string CustomerAddress { get; set; }
         public int UserID { get; set; }
+        public Nullable<byte> CustomerActive { get; set; }
     
         public virtual User User { get; set; }
-        public virtual Customer Customer1 { get; set; }
-        public virtual Customer Customer2 { get; set; }
-        public virtual Customer Customer11 { get; set; }
-        public virtual Customer Customer3 { get; set; }
     }
 }

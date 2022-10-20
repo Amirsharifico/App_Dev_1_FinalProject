@@ -59,6 +59,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Module\PublicVariable.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\App.g.i.cs" />
+    <Compile Include="obj\Debug\InventoryManagementSystem_Content.g.i.cs" />
+    <Compile Include="obj\Debug\window\win_product.g.i.cs" />
+    <Compile Include="obj\Debug\win_login.g.i.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="win_login.xaml.cs">
       <DependentUpon>win_login.xaml</DependentUpon>
     </Compile>
@@ -93,6 +100,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="obj\Release\InventoryManagementSystem.csproj.AssemblyReference.cache" />
     <None Include="packages\EntityFramework.6.2.0\Content\net40\App.config.transform" />
     <None Include="packages\EntityFramework.6.2.0\Content\net40\Web.config.transform" />
     <None Include="packages\EntityFramework.6.2.0\EntityFramework.6.2.0.nupkg" />
@@ -198,6 +206,10 @@
     <Content Include="packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.dll" />
     <Content Include="packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.Utility.dll" />
     <Content Include="packages\EntityFramework.6.2.0\tools\migrate.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

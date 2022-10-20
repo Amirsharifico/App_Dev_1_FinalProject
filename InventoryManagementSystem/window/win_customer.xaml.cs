@@ -1,4 +1,5 @@
 ﻿using DataModelLayer;
+using IMSBeta.Module;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,11 +73,10 @@ namespace IMSBeta.window
 
             if (item == null)
             {
-
-                MessageBox.Show("please select a customer first");
+                MessageBox.Show("Please select a customer first", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-             w_ae.CID = Convert.ToInt32((DataGridCustomer.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+            w_ae.CID = Convert.ToInt32((DataGridCustomer.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
             w_ae.CName = (DataGridCustomer.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
             w_ae.CTel = (DataGridCustomer.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
             w_ae.CAddress = (DataGridCustomer.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
@@ -91,12 +91,72 @@ namespace IMSBeta.window
 
         private void Btn_DeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
+           
 
+
+
+            if (MessageBox.Show("Are you sure you want to deactive the customer?", "Deactive Customer", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        object item = DataGridCustomer.SelectedItem;
+                        int CustomerID;
+                        CustomerID = Convert.ToInt32((DataGridCustomer.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+
+                        Customer C = (from Cu in database.Customers where Cu.CustomerID == CustomerID select Cu).SingleOrDefault();
+
+                        C.CustomerActive = 2;
+
+
+
+                        database.SaveChanges();
+                    MessageBox.Show("Customer successfully deactivated", "Save error", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ShowCustomerInfo();
+                    }
+                    catch
+                    {
+                    MessageBox.Show("There was a problem registering information", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                }
+
+
+          
         }
 
-        private void DataGridCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btn_ActiveCustomer_Click(object sender, RoutedEventArgs e)
         {
 
+
+            if (MessageBox.Show("Are you sure you want to active the customer?", " Active Customer", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    object item = DataGridCustomer.SelectedItem;
+                    int CustomerID;
+                    CustomerID = Convert.ToInt32((DataGridCustomer.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text);
+
+                    Customer C = (from Cu in database.Customers where Cu.CustomerID == CustomerID select Cu).SingleOrDefault();
+
+                    C.CustomerActive = 1;
+
+
+
+                    database.SaveChanges();
+                    MessageBox.Show("Customer successfully activated", "Save error", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ShowCustomerInfo();
+                }
+                catch
+                {
+                    MessageBox.Show("There was a problem registering information", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
         }
-    }
+
+            private void DataGridCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
+            }
+        }
 }

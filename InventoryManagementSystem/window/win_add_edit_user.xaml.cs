@@ -119,7 +119,7 @@ namespace IMSBeta.window
             var result = query.ToList();
             if (result.Count > 0)
             {
-                MessageBox.Show("This username already exists");
+                                MessageBox.Show("This username already exists", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_username.Focus();
                 return;
             }
@@ -159,7 +159,7 @@ namespace IMSBeta.window
             U.UserActive = 1;
                 database.Users.Add(U);
                 database.SaveChanges();
-                MessageBox.Show("New user added successfully");
+                            MessageBox.Show("New user added successfully", "Save error", MessageBoxButton.OK, MessageBoxImage.Information);
                  break;
               }
               case 2:
@@ -177,8 +177,7 @@ namespace IMSBeta.window
                             { U.UserGender = 2; }
 
                             database.SaveChanges();
-
-                            MessageBox.Show("User information has been updated successfully");
+                            MessageBox.Show("User information has been updated successfully", "Save error", MessageBoxButton.OK, MessageBoxImage.Information);
                             break;
 
                         }
@@ -188,7 +187,7 @@ namespace IMSBeta.window
 
             catch
             {
-                MessageBox.Show("There was a problem in registering information. Please try again");
+                MessageBox.Show("There was a problem in registering information. Please try again", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
@@ -199,42 +198,42 @@ namespace IMSBeta.window
         {
             if (txt_name.Text.Trim() == "")
             {
-                MessageBox.Show("Enter the user's name");
+                MessageBox.Show("Enter the user's name", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_name.Focus();
                 return false;
             }
             /////////
             if (txt_userfamily.Text.Trim() == "")
             {
-                MessageBox.Show("Enter the user's last name");
+                MessageBox.Show("Enter the user's last name", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_userfamily.Focus();
                 return false;
             }
             ////////
             if (txt_usertel.Text.Trim() == "")
             {
-                MessageBox.Show("Enter the user's phone number");
+                MessageBox.Show("Enter the user's phone number", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_usertel.Focus();
                 return false;
             }
             ///////
             if (txt_userage.Text.Trim() == "")
             {
-                MessageBox.Show("Enter the user's age");
+                MessageBox.Show("Enter the user's age", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_userage.Focus();
                 return false;
             }
             ///////
             if (txt_username.Text.Trim() == "")
             {
-                MessageBox.Show("Enter the username");
+                MessageBox.Show("Enter the username", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_username.Focus();
                 return false;
             }
             //////////
             if (txt_pass.Password.Trim() == "")
             {
-                MessageBox.Show("  Enter the password");
+                MessageBox.Show("Enter the password", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_pass.Focus();
                 return false;
             }

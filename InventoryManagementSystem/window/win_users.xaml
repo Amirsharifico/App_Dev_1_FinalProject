@@ -27,7 +27,7 @@
                Source="/img/exit.png" Cursor="Hand" MouseDown="Image_MouseDown" />
         <!--v11/m40-->
         <!--DatGrid-->
-        <DataGrid Name="DataGridUser" AutoGenerateColumns="False" Margin="21,113,20,217" BorderThickness="1" VerticalGridLinesBrush="White">
+        <DataGrid Name="DataGridUser" AutoGenerateColumns="False" Margin="21,119,20,181" BorderThickness="1" VerticalGridLinesBrush="White">
 
             <DataGrid.Columns>
 
@@ -40,11 +40,20 @@
                 <DataGridTextColumn Header="Gender" Width="100" Binding="{Binding UserGender }"/>
                 <DataGridTextColumn Header="Username" Binding="{Binding UserUserName}"/>
 
-
-
-
-
             </DataGrid.Columns>
+
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Active User" Click="btn_ActiveUser_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/img/price.png" Width="12" Height="12"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                </ContextMenu>
+
+
+            </DataGrid.ContextMenu>
 
         </DataGrid>
 
@@ -53,42 +62,27 @@
 
 
         <!--Buttons-->
-
-
-
-
-
-
-
-
-
-        <Rectangle HorizontalAlignment="Left" Height="72" Margin="39,541,0,0" RadiusY="10" RadiusX="10" Stroke="#FFBFB4B4" VerticalAlignment="Top" Width="551">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFDDC9EC"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
         <Button Name="Btn_AddUser" Content="Add User" HorizontalAlignment="Left" Margin="79,558,0,0" VerticalAlignment="Top" Width="97" Height="38" Click="Btn_AddUser_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7E86CF" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="Btn_DeleteUser" Content="Delete User" HorizontalAlignment="Left" Margin="433,558,0,0" Width="97" Height="38" VerticalAlignment="Top">
+        <Button x:Name="Btn_DeleteUser" Content="Delete User" HorizontalAlignment="Left" Margin="433,558,0,0" Width="97" Height="38" VerticalAlignment="Top" Click="Btn_DeleteUser_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7E86CF" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
@@ -98,8 +92,9 @@
             </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7E86CF" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>

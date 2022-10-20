@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IMSBeta.window"
         mc:Ignorable="d"
-       Title="win_product" Height="700" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" Loaded="Window_Loaded">
+       Title="win_product" Height="700" Width="759" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" Loaded="Window_Loaded">
     <Window.Triggers>
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard>
@@ -17,21 +17,29 @@
     </Window.Triggers>
     <Grid>
 
-        <Rectangle HorizontalAlignment="Center" Height="680" Stroke="Black" Fill="White" VerticalAlignment="Center" Width="580"/>
-        <Rectangle HorizontalAlignment="Center" Height="84" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="580" MouseDown="Rectangle_MouseDown"/>
-        <Label Content="Products" HorizontalAlignment="Left" Margin="135,39,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Center" Height="680" Stroke="Black" Fill="#FFE2E9EF" VerticalAlignment="Center" Width="802"/>
+        <Rectangle HorizontalAlignment="Center" Height="84" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="740" MouseDown="Rectangle_MouseDown">
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE3DEF5" Offset="0"/>
+                    <GradientStop Color="#FFF9F8FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Products" HorizontalAlignment="Left" Margin="105,36,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Width="122"/>
         <Image HorizontalAlignment="Left" Height="58" Margin="31,21,0,0" VerticalAlignment="Top" Width="70" Source="/img/box.png"/>
-        <Image HorizontalAlignment="Left" Height="16" Margin="550,44,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.7,-0.062"
+        <Image HorizontalAlignment="Left" Height="16" Margin="708,21,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.7,-0.062"
                Source="/img/exit.png" Cursor="Hand" MouseDown="Image_MouseDown" />
-        <Rectangle HorizontalAlignment="Center" Height="100" Margin="0,474,0,0" Stroke="Black" VerticalAlignment="Top" Width="568"/>
         <!--v11/m40-->
-        <Label Content="Search" HorizontalAlignment="Left" Margin="31,511,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.448,-1.387" FontWeight="Bold"/>
         <!--DatGrid-->
-        <DataGrid Name="DataGridProduct" AutoGenerateColumns="False" Margin="105,99,91,231" BorderThickness="1" VerticalGridLinesBrush="White">
+        <DataGrid Name="DataGridProduct" AutoGenerateColumns="False" Margin="22,123,22,123" BorderThickness="1" VerticalGridLinesBrush="White" Background="White" >
 
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Product ID" Width="100" Binding="{Binding ProductId}"/>
+                <DataGridTextColumn Header="Product ID" Width="70" Binding="{Binding ProductId}"/>
 
 
                 <DataGridTextColumn Header="Name" Width="100" Binding="{Binding ProductName}"/>
@@ -40,15 +48,13 @@
                 <DataGridTextColumn Header="Description" Width="100" Binding="{Binding ProductDescription}"/>
 
 
-                <DataGridTextColumn Header="Price" Width="100" Binding="{Binding ProductLastFee}"/>
+                <DataGridTextColumn Header="Price" Width="70" Binding="{Binding ProductLastFee}"/>
 
-                <DataGridTextColumn Header="Quantity" Width="100" Binding="{Binding ProductLastSupply}"/>
-
-
-                <DataGridTextColumn Header="Price" Width="100" Binding="{Binding ProductLastFee}"/>
+                <DataGridTextColumn Header="Quantity" Width="60" Binding="{Binding ProductLastSupply}"/>
+                <DataGridTextColumn Header="ProductActive" Width="100" Binding="{Binding ProductActive}"/>
 
                 <DataGridTextColumn Header="Registered By " Width="100" Binding="{Binding FullName}"/>
-                <DataGridTemplateColumn Header="Image">
+                <DataGridTemplateColumn Header="Image" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Image Width="70" Height="70" Source="{Binding ProductImage}"/>
@@ -56,9 +62,8 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-
-
             </DataGrid.Columns>
+
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Price History" Click="Btn_ProductPrice_Click">
@@ -73,6 +78,12 @@
                             <Image Source="/img/stock.png" Width="12" Height="12" />
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="Active Product" Click="Btn_ActiveProduct_Click">
+                        <MenuItem.Icon>
+
+                            <Image Source="/img/price.png" Width="12" Height="12" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </ContextMenu>
 
 
@@ -85,9 +96,43 @@
 
 
         <!--Buttons-->
-        <Button Name="Btn_DeleteProduct" Content="Delete Product" HorizontalAlignment="Left" Margin="400,613,0,0" VerticalAlignment="Top"/>
-        <Button Name="Btn_EditProduct" Content="Edit Product" HorizontalAlignment="Left" Margin="268,613,0,0" VerticalAlignment="Top"/>
-        <Button Name="Btn_AddProduct" Content="Add Product" HorizontalAlignment="Left" Margin="105,608,0,0" VerticalAlignment="Top"/>
+        <Button Name="Btn_DeleteProduct" Content="Delete Product" HorizontalAlignment="Left" Margin="512,607,0,0" Width="97" Height="37" VerticalAlignment="Top" Click="Btn_DeleteProduct_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="Btn_EditProduct" Content="Edit Product" HorizontalAlignment="Left" Margin="360,607,0,0" Width="97" Height="37" VerticalAlignment="Top" Click="Btn_EditProduct_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button Name="Btn_AddProduct" Content="Add Product" HorizontalAlignment="Left" Margin="196,607,0,0" Width="97" Height="37" VerticalAlignment="Top" Click="Btn_AddProduct_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

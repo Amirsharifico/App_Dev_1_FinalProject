@@ -14,12 +14,12 @@ namespace DataModelLayer
     
     public partial class Vw_ProductPrice
     {
-        public int UserId { get; set; }
-        public int ProductId { get; set; }
-        public string ProductPriceDesc { get; set; }
-        public long ProductPriceSell { get; set; }
-        public long ProductPricePurch { get; set; }
         public int ProductPriceId { get; set; }
+        public long ProductPricePurch { get; set; }
+        public long ProductPriceSell { get; set; }
+        public string ProductPriceDesc { get; set; }
+        public int ProductId { get; set; }
+        public int UserId { get; set; }
         public string ProductName { get; set; }
         public string UserName { get; set; }
         public string UserFamily { get; set; }

@@ -20,7 +20,6 @@ namespace DataModelLayer
         public int UserID { get; set; }
         public int ProductId { get; set; }
     
-        public virtual Product Product { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -21,8 +21,9 @@ namespace DataModelLayer
         public int ProductLastSupply { get; set; }
         public byte[] ProductImage { get; set; }
         public int UserId { get; set; }
-        public string UserName { get; set; }
         public string UserFamily { get; set; }
+        public string UserName { get; set; }
         public string FullName { get; set; }
+        public Nullable<byte> ProductActive { get; set; }
     }
 }
