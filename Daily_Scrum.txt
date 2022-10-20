@@ -235,6 +235,46 @@ Ilnaz ---------------------------------------------------------
 3. Need assistance / figure things out
 
 
+20-Oct-2022
+Amir ---------------------------------------------------------
+1. Done / not done since last scrum:
+   Update login Page
+   Create Delete button customer
+    Create Module 
+     Update Win-Main
+    create page Set password
+
+2. To do until next Scrum:
+
+
+3. Need assistance / figure things out
+
+Hossein ---------------------------------------------------------
+1. Done / not done since last scrum:
+Add/Edite/Delete User
+ Add NewPrice
+ Update User
+ update design project
+
+2. To do until next Scrum:
+
+
+3. Need assistance / figure things out
+
+Ilnaz ---------------------------------------------------------
+1. Done / not done since last scrum:
+ Create Regex for Customer
+ Add New Transaction
+ Update/delete Product 
+ Update Inventory
+ update design project 
+
+2. To do until next Scrum:
+
+
+3. Need assistance / figure things out
+
+
 
 
 

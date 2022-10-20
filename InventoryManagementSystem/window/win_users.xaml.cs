@@ -97,7 +97,7 @@ namespace IMSBeta.window
         {
 
 
-            if (MessageBox.Show("Are you sure you want to active the user?", " Active User", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Are you sure you want to deactive the customer?", " Active Customer", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 try
                 {
