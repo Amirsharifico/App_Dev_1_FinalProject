@@ -38,11 +38,13 @@ Ilnaz ---------------------------------------------------------
 2. To do until next Scrum:
 installing MSSQL 
 3. Need assistance / figure things out
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+---------------------------------------------------------------
 13-Oct-2022
 all of us still strugelling with database and main aspect of the project !!!
 
 at the ened of October-13 we finalized to connect Database 
+
+
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 14-Oct-2022
 Amir ---------------------------------------------------------
@@ -117,7 +119,7 @@ Update product
 
 3. Need assistance / figure things out
 
-
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 17-Oct-2022
 Amir ---------------------------------------------------------
 1. Done / not done since last scrum:
@@ -152,6 +154,7 @@ Insert button for Add price
  
 3. Need assistance / figure things out
 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 18-Oct-2022
 Amir ---------------------------------------------------------
 1. Done / not done since last scrum:
@@ -189,6 +192,47 @@ Ilnaz ---------------------------------------------------------
 
 3. Need assistance / figure things out
 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+19-Oct-2022
+Amir ---------------------------------------------------------
+1. Done / not done since last scrum:
+Work on Delete/ Update button
+ Craete User Form and Register Data
+ 
+
+2. To do until next Scrum:
+   Update login Page
+   Create Delete button customer
+    Create Module 
+     Update Win-Main
+    create page Set password
+3. Need assistance / figure things out
+
+Hossein ---------------------------------------------------------
+1. Done / not done since last scrum:
+Update Customer Information
+Create Regex for User
+
+2. To do until next Scrum:
+Add/Edite/Delete User
+ Add NewPrice
+ Update User
+ update design project
+3. Need assistance / figure things out
+
+Ilnaz ---------------------------------------------------------
+1. Done / not done since last scrum:
+
+ Create Regex for Customer
+ Add Product 
+
+2. To do until next Scrum:
+ Add New Transaction
+ Update/delete Product 
+ Update Inventory
+ update design project
+3. Need assistance / figure things out
 
 
 

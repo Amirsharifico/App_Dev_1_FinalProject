@@ -21,30 +21,27 @@
 
         <Rectangle HorizontalAlignment="Center" Height="680" Stroke="Black" Fill="White" VerticalAlignment="Center" Width="580"/>
         <Rectangle HorizontalAlignment="Center" Height="84" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="580" MouseDown="Rectangle_MouseDown"/>
-        <Label Content="Users" HorizontalAlignment="Left" Margin="135,39,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Users"  Margin="135,39,389,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <Image HorizontalAlignment="Left" Height="58" Margin="31,21,0,0" VerticalAlignment="Top" Width="70" Source="/img/mottakere.png"/>
         <Image HorizontalAlignment="Left" Height="16" Margin="550,44,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.7,-0.062"
                Source="/img/exit.png" Cursor="Hand" MouseDown="Image_MouseDown" />
-        <Rectangle HorizontalAlignment="Center" Height="100" Margin="0,474,0,0" Stroke="Black" VerticalAlignment="Top" Width="568"/>
         <!--v11/m40-->
-        <Label Content="Search" HorizontalAlignment="Left" Margin="31,511,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.448,-1.387" FontWeight="Bold"/>
         <!--DatGrid-->
-        <DataGrid Name="DataGridUser" AutoGenerateColumns="False" Margin="105,99,91,231" BorderThickness="1" VerticalGridLinesBrush="White">
+        <DataGrid Name="DataGridUser" AutoGenerateColumns="False" Margin="21,113,20,217" BorderThickness="1" VerticalGridLinesBrush="White">
 
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="User ID" Width="100" Binding="{Binding UserID}"/>
-                
-
                 <DataGridTextColumn Header="Name" Width="100" Binding="{Binding UserName}"/>
-
                 <DataGridTextColumn Header="Last Name" Width="100" Binding="{Binding UserFamily}"/>
-
                 <DataGridTextColumn Header="Tel" Width="100" Binding="{Binding UserTel}"/>
+                <DataGridTextColumn Header="Age" Width="100" Binding="{Binding UserAge}"/>
+                <DataGridTextColumn Header="Status" Width="100" Binding="{Binding UserActive}"/>
                 <DataGridTextColumn Header="Gender" Width="100" Binding="{Binding UserGender }"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding UserUserName}"/>
 
-                <DataGridTextColumn Header="Tel" Width="100" Binding="{Binding UserTel}"/>
-              
+
+
 
 
             </DataGrid.Columns>
@@ -56,9 +53,57 @@
 
 
         <!--Buttons-->
-        <Button Name="Btn_DeleteUser" Content="Delete User" HorizontalAlignment="Left" Margin="400,613,0,0" VerticalAlignment="Top"/>
-        <Button Name="Btn_EditUser" Content="Edit User" HorizontalAlignment="Left" Margin="268,613,0,0" VerticalAlignment="Top"/>
-        <Button Name="Btn_AddUser" Content="Add USer" HorizontalAlignment="Left" Margin="105,608,0,0" VerticalAlignment="Top"/>
+
+
+
+
+
+
+
+
+
+        <Rectangle HorizontalAlignment="Left" Height="72" Margin="39,541,0,0" RadiusY="10" RadiusX="10" Stroke="#FFBFB4B4" VerticalAlignment="Top" Width="551">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDDC9EC"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Name="Btn_AddUser" Content="Add User" HorizontalAlignment="Left" Margin="79,558,0,0" VerticalAlignment="Top" Width="97" Height="38" Click="Btn_AddUser_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7E86CF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Btn_DeleteUser" Content="Delete User" HorizontalAlignment="Left" Margin="433,558,0,0" Width="97" Height="38" VerticalAlignment="Top">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7E86CF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Btn_EditUser" Content="Edit User" HorizontalAlignment="Center" Margin="0,558,0,0" Width="96" Height="38" VerticalAlignment="Top" Click="Btn_EditUser_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7E86CF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
 
 
 
