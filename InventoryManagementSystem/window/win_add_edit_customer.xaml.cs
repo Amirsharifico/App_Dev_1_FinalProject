@@ -50,7 +50,7 @@ namespace IMSBeta.window
             {
                 return;
             }
-            //////////////////////////////////////////////////ثبت اطلاعات در دیتابیس
+            //////////////////////////////////////////////////
             try
             {
 
@@ -69,8 +69,8 @@ namespace IMSBeta.window
                             database.Customers.Add(C);
                             database.SaveChanges();
 
-                            MessageBox.Show("New customer added successfully");
-
+                            
+                            MessageBox.Show("New customer added successfully", "Save error", MessageBoxButton.OK, MessageBoxImage.Information);
                             break;
                         }
                     case 2:
@@ -84,15 +84,16 @@ namespace IMSBeta.window
 
 
                             database.SaveChanges();
-
-                            MessageBox.Show("Customer information has been updated successfully");
+                            MessageBox.Show("Customer information has been updated successfully", "Save error", MessageBoxButton.OK, MessageBoxImage.Information);
+                         
                             break;
                         }
                 }
             }
             catch
             {
-                MessageBox.Show("There was a problem with the database. Please try again");
+                MessageBox.Show("There was a problem with the database. Please try again", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
+                
             }
             finally
             {
@@ -105,19 +106,20 @@ namespace IMSBeta.window
         {
             if (txt_customerName.Text == "")
             {
+                MessageBox.Show("Customer name is Empty", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 MessageBox.Show("Customer name is empty");
                 txt_customerName.Focus();
                 return false;
             }
             if (txt_telcustomer.Text == "")
             {
-                MessageBox.Show("The customer's phone is empty");
+                MessageBox.Show("The customer's phone is empty", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_telcustomer.Focus();
                 return false;
             }
             if (txt_customerAddress.Text == "")
             {
-                MessageBox.Show("Customer address is empty");
+                MessageBox.Show("Customer address is empty", "Save error", MessageBoxButton.OK, MessageBoxImage.Error);
                 txt_customerAddress.Focus();
                 return false;
             }

@@ -6,80 +6,70 @@
         xmlns:local="clr-namespace:IMSBeta.window"
         xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="IMSBeta.window.win_main"
         mc:Ignorable="d"
-        Title="win_main" Height="640" Width="1200" WindowStartupLocation="CenterScreen" Closing="Window_Closing" WindowStyle="ToolWindow" Loaded="Window_Loaded">
-    <Grid>
-        <Custom:Ribbon Margin="10,0,10,119" >
+        Title="" Height="640" Width="628" WindowStartupLocation="CenterScreen" Closing="Window_Closing" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+    <Grid Margin="0,0,-29,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="446*"/>
+        </Grid.ColumnDefinitions>
+        <Custom:Ribbon Margin="0,0,29,119" Grid.ColumnSpan="2" >
             <Custom:Ribbon.QuickAccessToolBar>
                 <Custom:RibbonQuickAccessToolBar>
-                    <Custom:RibbonSplitButton SmallImageSource="/img/advanced.tiff">
-                        <Custom:RibbonSplitMenuItem Header="About Us" ImageSource="/img/12.png"/>
-                        <Custom:RibbonSplitMenuItem Header="Contact Us" ImageSource="/img/send.png" Click="Btn_Con_Click"/>
-                        <Custom:RibbonSplitMenuItem Header="Exit" ImageSource="/img/exit.png"  Click="Btn_Exit_Click" />
-                    </Custom:RibbonSplitButton>
+
                 </Custom:RibbonQuickAccessToolBar>
             </Custom:Ribbon.QuickAccessToolBar>
 
-            <Custom:Ribbon.ApplicationMenu>
-                <Custom:RibbonApplicationMenu>
-                    <Custom:RibbonApplicationMenuItem Header="Define User" ImageSource="/img/44.png" Click="Btn_ShowUser_Click"/>
-                    <Custom:RibbonApplicationMenuItem Header="Define User Access" ImageSource="/img/advanced.tiff"/>
-                    <Custom:RibbonApplicationMenuItem Header="Change Password" ImageSource="/img/2.png"/>
-                    <Custom:RibbonApplicationMenuItem Header="Define System **** " ImageSource="/img/ajza.png"/>
-                    <Custom:RibbonApplicationMenuItem Header="Define Customer" ImageSource="/img/customer.png" Click="Btn_ShowCustomer_Click"/>
-                    <Custom:RibbonApplicationMenuItem Header="Create BackUp" ImageSource="/img/server.png"/>
-                </Custom:RibbonApplicationMenu>
-            </Custom:Ribbon.ApplicationMenu>
+
             <!---->
-            <Custom:RibbonTab Header="Products" Height="100">
+            <Custom:RibbonTab Header="Services" Height="100" Margin="0,0,0,-12" Width="612">
                 <Custom:RibbonGroup>
-                    <Custom:RibbonButton Label="Show Products" LargeImageSource="/img/product2.gif" Click="Btn_ShowProduct_Click"/>
+                    <Custom:RibbonButton Label="Show Products" LargeImageSource="/img/product2.gif" Click="Btn_ShowProduct_Click" Width="80"/>
                 </Custom:RibbonGroup>
-                <Custom:RibbonGroup Header="Products Section" Height="80" Margin="0,0,0,10">
-                    <Custom:RibbonButton Label="Prices" SmallImageSource="/img/13.png" Margin="0,0,10,15"/>
-                    <Custom:RibbonButton Label="Products Inventory" SmallImageSource="/img/4.png"/>
-                    <Custom:RibbonButton Label="Sales Chart" SmallImageSource="/img/nemudar.png"/>
-                </Custom:RibbonGroup>
-            </Custom:RibbonTab>
-            <!---->
-            <Custom:RibbonTab Header="Sales" Height="100">
                 <Custom:RibbonGroup>
-                    <Custom:RibbonButton Label="Order Registration" LargeImageSource="/img/add-icon.png"/>
+                    <Custom:RibbonButton Label="User" LargeImageSource="/img/44.png" Click="Btn_ShowUser_Click" Width="80"/>
                 </Custom:RibbonGroup>
-                <Custom:RibbonGroup Header="Invoices" Height="80" Margin="0,0,0,10">
-                    <Custom:RibbonButton Label="View Invoice" SmallImageSource="/img/13.png" Margin="0,0,10,15"/>
-                    <Custom:RibbonButton Label="Sales Report" SmallImageSource="/img/4.png" />
-                    <Custom:RibbonButton Label="Customer Based Report" SmallImageSource="/img/send.png"/>
-                    <Custom:RibbonButton Label="Invoice Based Report" SmallImageSource="/img/21.png" />
-                    <Custom:RibbonButton Label="Product Based Report" SmallImageSource="/img/dastresi.png"/>
-                    <Custom:RibbonButton Label="User Based Report" SmallImageSource="/img/44.png" Margin="0,0,10,15"/>
-                    <Custom:RibbonButton Label="Cost-Benefit Based Report" SmallImageSource="/img/13.png" Margin="0,0,10,15"/>
-                    <Custom:RibbonButton Label="Sales Chart" SmallImageSource="/img/nemudar.png"/>
 
+                <Custom:RibbonGroup>
+                    <Custom:RibbonButton Label="Customer" LargeImageSource="/img/customer.png" Click="Btn_ShowCustomer_Click" Width="80"/>
                 </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup>
+                    <Custom:RibbonButton Label="Change Password" LargeImageSource="/img/2.png" Click="btn_SetnewPass_click" Width="80"/>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Width="88" Height="81">
+                    <Custom:RibbonButton Label="BackUp" LargeImageSource="/img/server.png" Width="80"/>
+                </Custom:RibbonGroup>
+
+
 
             </Custom:RibbonTab>
             <!---->
-            <Custom:RibbonTab Header="WareHouse Management" Height="100">
 
-            </Custom:RibbonTab>
             <!---->
-            <Custom:RibbonTab Header="Reports" Height="100">
 
-            </Custom:RibbonTab>
 
         </Custom:Ribbon>
 
-        <DockPanel LastChildFill="False" Margin="10,567,10,10">
-            <Label Name="LblName" Content="Name" Width="86" Height="29"/>
-            <Label Content="Label2" Width="86" Height="29"/>
-            <Label Content="Label3" Width="86" Height="29"/>
-            <Label Content="Label4" Width="86" Height="29"/>
-            <Label Content="Label5" Width="86" Height="29"/>
-            <Label Content="Label6" Width="86" Height="29"/>
-            <Label Content="Label7" Width="86" Height="29"/>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="231" Margin="10,368,0,0" VerticalAlignment="Top" Width="241" Source="/img/11.jpg" Stretch="Fill" Opacity="0.7" Grid.ColumnSpan="2"/>
 
-        </DockPanel>
-       
+        <DockPanel HorizontalAlignment="Left" Height="64" LastChildFill="False" Margin="0,560,0,0" VerticalAlignment="Top" Width="628" Opacity="0.5" Background="#FFBAD3EF" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Name :"  Margin="18,255,340,0" VerticalAlignment="Top"  Foreground="#FF0F610C" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="lbl_name" Content="..." Margin="112,255,185,0" VerticalAlignment="Top"  Foreground="#FFF01010"  FontSize="16" Grid.Column="1"/>
+        <Label x:Name="label2" Content="Last Name :"  Margin="199,313,328,0" VerticalAlignment="Top"  Foreground="#FF0F610C" FontFamily="B Yekan" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbl_family" Content="..."  Margin="112,312,158,0" VerticalAlignment="Top" RenderTransformOrigin="0.579,0.038" Width="176" Foreground="#FFF01010" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="label4" Content="Time :"  Margin="24,193,337,0" VerticalAlignment="Top" RenderTransformOrigin="8.447,6.962"  Foreground="#FF0F610C" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="lbl_time" Content="18:06" HorizontalAlignment="Left" Margin="89,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.526,6.692" Width="81" HorizontalContentAlignment="Center" Foreground="#FFF01010" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="label6" Content="Inventory Management System" HorizontalAlignment="Left" Margin="48,429,0,0" VerticalAlignment="Top" Foreground="#FF181EA8" FontFamily="B Yekan" FontSize="18" FontWeight="Bold" Grid.Column="1">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF58C3E0"/>
+                    <GradientStop Color="#FFFDFDFD" Offset="0.987"/>
+                    <GradientStop Color="#FF57D0AC" Offset="0.228"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+
 
 
 
